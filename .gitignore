@@ -1,0 +1,39 @@
+# Add this content to .gitignore
+Set-Content -Path .gitignore -Value @"
+# Sensitive files with API keys
+run-debug.ps1
+run-interactive-agent.ps1
+run-interactive-agent-fixed.ps1
+**/apikey*.ps1
+**/key*.ps1
+
+# Docker build artifacts
+*.tar
+*.tar.gz
+hello-agent-working/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ignore virtual environments
+venv/
+.env/
+"@

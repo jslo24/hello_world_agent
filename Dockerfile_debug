@@ -1,0 +1,14 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install required packages
+RUN pip install --upgrade pip
+RUN pip install "python-dotenv>=1.0.0" "httpx>=0.24.0"
+
+# Copy debug script and env file
+COPY debug_agent.py /app/
+COPY .env /app/
+
+# Run the debug script
+CMD ["python", "debug_agent.py"]
